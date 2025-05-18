@@ -1,0 +1,42 @@
+.container-fluid {
+    background-color: var(--secondary-color);
+    padding-top: var(--padding-sm);
+}
+
+hr {
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: var(--padding-sm);
+}
+
+.footer-element {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.footer-element a {
+    text-decoration: none;
+}
+
+.footer-element span {
+    color: var(--p-color);
+    padding-left: var(--padding-sm);
+}
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--gap-md);
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}

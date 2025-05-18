@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --background-color: #D3F1DF;
+    --primary-color: #85A98F;
+    --secondary-color: #5A6C57;
+    --accent-color: #525B44;
+    --p-color: #090c0a;
+    --bg-hover-color: #6f836a;
+    --font-family: "Zen Dots", sans-serif;
+    --margin-sm: 0.5rem;
+    --margin-md: 1rem;
+    --padding-sm: 0.5rem;
+    --padding-md: 1rem;
+    --gap-md: 1rem;
+    --h3: 1.5rem; 
+    --border-radius: 15px;
+}
+body {
+    background-color: var(--background-color);
+    font-family: var(--font-family);
+    font-weight: 400;
+}

@@ -1,0 +1,69 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 0;
+    background-color: var(--primary-color);
+}
+
+.header-container {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: var(--padding-sm);
+}
+
+.login-container {
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
+}
+
+.login-container > button {
+    color: var(--p-color);
+    border-color: var(--accent-color);
+}
+
+.login-container .btn-outline-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.login-container .btn-primary {
+    background-color: var(--secondary-color);
+}
+
+.login-container .btn-primary:hover {
+    background-color: var(--bg-hover-color)
+}
+
+.header-element {
+    color: var(--p-color);
+    text-decoration: none;
+}
+
+.header-element:hover{
+    cursor: pointer;
+    color: var(--accent-color);
+}
+
+.title {
+    color: var(--p-color);
+    font-size: 1.5rem;
+}
+
+.navbar-brand {
+    width: 64px;
+    height: 64px;
+}
+
+.navbar-brand img {
+    width: 100%;
+    height: 100%;
+}
