@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
-import { HeroSectionComponent } from "./components/hero-section/hero-section.component";
-import { FeaturesSectionComponent } from "./components/features-section/features-section.component";
+import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from "./components/footer/footer.component";
+import { FormComponent } from './components/form/form.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, HeroSectionComponent, FeaturesSectionComponent, FooterComponent],
+  standalone: true,
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, HomeComponent, FormComponent, PortfolioComponent, AboutUsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -10,9 +10,11 @@
     --margin-md: 1rem;
     --padding-sm: 0.5rem;
     --padding-md: 1rem;
+    --gap-sm: 0.5rem;
     --gap-md: 1rem;
     --h3: 1.5rem; 
     --border-radius: 15px;
+    --border-radius-sm: 5px;
 }
 body {
     background-color: var(--background-color);

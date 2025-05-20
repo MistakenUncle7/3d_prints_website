@@ -1,0 +1,30 @@
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+hr {
+    border-width: 5px;
+    border-radius: var(--border-radius);
+    border-color: var(--secondary-color);
+}
+
+.grid-container {
+    display: grid;
+    padding: var(--padding-md);
+    gap: var(--gap-md);
+    margin: var(--margin-md);
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+img{
+    border-radius: var(--border-radius);
+    max-width: 400px;
+}

@@ -1,0 +1,77 @@
+<form class="form-container">
+
+    <h2>Formulario Para Cotización</h2>
+
+    <div class="form-multiple-elements">
+        <div class="form-element-vertical">
+            <label for="firstName">Nombre</label>
+            <input type="text" name="firstName" id="firstName">
+        </div>
+        
+        <div class="form-element-vertical">
+            <label for="lastName">Apellidos</label>
+            <input type="text" name="lastName" id="lastName">
+        </div>
+    </div>
+
+    <div class="form-element-vertical">
+        <label for="email">Correo Electronico</label>
+        <input type="email" name="email" id="email">
+    </div>
+
+    <div class="form-element-vertical">
+        <label for="file">Link del archivo</label>
+        <input type="url" name="file" id="file">
+    </div>
+
+    <div class="form-multiple-elements">
+        
+        <div class="form-element-vertical">
+            <label for="quality">Calidad de la impresion</label>
+            <select name="quality" id="quality">
+                <option value="" selected disabled>Seleccionar</option>
+                <option value="High">Alta</option>
+                <option value="Medium">Media</option>
+            </select>
+        </div>
+        
+        <div class="form-element-vertical">
+            <label for="delivery">Tiempo de entrega</label>
+            <select name="delivery" id="delivery">
+                <option value="" selected disabled>Seleccionar</option>
+                <option value="Urgent">Urgente</option>
+                <option value="Normal">Normal</option>
+            </select>
+        </div>
+        
+    </div>
+
+    <div class="form-multiple-elements">
+
+        <div class="form-element-horizontal">
+            <input type="checkbox" name="cad" id="cad">
+            <label for="cad">¿Requiere diseño CAD?</label>
+        </div>
+        
+        <div class="form-element-horizontal">
+            <input type="checkbox" name="dentist" id="dentist">
+            <label for="dentist">¿Es usted un odontólogo?</label>
+        </div>
+    
+        <div class="form-element-horizontal">
+            <input type="checkbox" name="email" id="email">
+            <label for="email">¿Requiere la conversión a un modelo para impresión?</label>
+        </div>
+
+    </div>
+
+    <div class="form-element-vertical">
+        <label for="description">Descripción sobre la impresión</label>
+        <textarea name="description" id="description" placeholder="Añadir descripción"></textarea>
+    </div>
+
+    <div class="form-element-horizontal">
+        <button type="button" class="btn btn-primary">Cotizar</button>
+    </div>
+
+</form>
