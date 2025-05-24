@@ -25,12 +25,14 @@ hr {
 
 .faq-container {
     margin-top: var(--margin-md);
+    gap: var(--gap-md);
+    justify-content: space-between;
 }
 
 .faq-card {
     background-color: var(--primary-color);
     padding: var(--padding-md);
-    max-width: 50%;
+    max-width: 49%;
     border-radius: var(--border-radius);
 }
 
@@ -40,9 +42,12 @@ p {
 }
 
 .faq-title {
+    display: flex;
+    flex-flow: row nowrap;
     justify-content: space-between;
 }
 
 span {
-    max-width: 10%;
+    font-size: 36px;
+    margin-right: 5%;
 }
