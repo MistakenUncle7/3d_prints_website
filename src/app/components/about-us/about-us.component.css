@@ -1,0 +1,16 @@
+.about-contianer {
+    display: flex;
+    flex-flow: row wrap;
+    margin: var(--margin-md);
+    margin-top: 6rem;
+    gap: var(--gap-md);
+}
+
+.text-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.img-container {
+    background-color: var(--secondary-color);
+}

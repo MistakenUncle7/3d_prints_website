@@ -1,7 +1,30 @@
+.features-section-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--gap-md);
+}
+
 .features-container {
     display: flex;
     flex-direction: column;
+}
+
+.features-element {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--gap-sm);
+    padding: var(--margin-sm);
+}
+
+.m-md {
     margin: var(--margin-md);
+}
+
+.card {
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    max-width: 400px;
+    padding: var(--padding-sm);
 }
 
 .material-symbols-outlined {
@@ -20,37 +43,15 @@ hr {
     border-color: var(--secondary-color);
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: space-around;
-    align-content: space-around;
-    padding: var(--padding-md);
-}
-
-.grid-element {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas: 
-    "img title"
-    "img paragraph";
-    background-color: var(--primary-color);
-    border-radius: 10px;
-    margin: var(--margin-sm);
-    padding: var(--padding-sm);
-}
-
 .element-title {
-    grid-area: title;
     font-size: var(--h3);
 }
 
-.element-txt {
-    grid-area: paragraph;
-}
-
-.element-img {
-    grid-area: img;
+span {
     text-align: center;
     color: var(--secondary-color);
+}
+
+li {
+    margin: var(--margin-sm);
 }

@@ -1,0 +1,48 @@
+.flex-container {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: var(--margin-md);
+    margin-top: 6rem;
+    padding: var(--padding-md);
+}
+
+.flex-x {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flex-y {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+hr {
+    border-width: 5px;
+    border-radius: var(--border-radius);
+    border-color: var(--secondary-color);
+    margin: 0;
+}
+
+.faq-container {
+    margin-top: var(--margin-md);
+}
+
+.faq-card {
+    background-color: var(--primary-color);
+    padding: var(--padding-md);
+    max-width: 50%;
+    border-radius: var(--border-radius);
+}
+
+p {
+    margin-bottom: 0;
+    color: var(--p2-color);
+}
+
+.faq-title {
+    justify-content: space-between;
+}
+
+span {
+    max-width: 10%;
+}
