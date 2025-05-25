@@ -1,16 +1,64 @@
-.about-contianer {
+.flex-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     margin: var(--margin-md);
     margin-top: 6rem;
+    padding: var(--padding-md);
     gap: var(--gap-md);
+    height: 80vh;
+    overflow-y: auto;
 }
 
-.text-container {
+.info-container {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
+    position: sticky;
+    top: 2rem;
+    max-width: 45%;
+    max-height: 50%;
 }
 
 .img-container {
-    background-color: var(--secondary-color);
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 55%;
+    gap: var(--gap-md);
+}
+
+.img-elemet {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: var(--padding-sm);
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    max-width: 100%;
+}
+
+img {
+    border-radius: var(--border-radius);
+    max-width: 100%;
+    margin-bottom: var(--margin-md);
+}
+
+.date {
+    color: var(--accent-color);
+    font-size: small;
+    margin-bottom: var(--margin-sm);
+}
+
+.info-text {
+    margin-bottom: var(--margin-sm);
+    color: var(--p2-color);
+}
+
+.info-img {
+    padding-left: var(--padding-md);
+    color: var(--p-color);
+    margin-bottom: var(--margin-sm);
+}
+
+hr {
+    margin: 0;
+    margin-bottom: var(--margin-sm);
 }
