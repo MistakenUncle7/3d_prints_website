@@ -26,10 +26,10 @@
 
     <div class="flex-x">
         <div class="full-input">
-            <label for="url" class="form-label">Link archivo:</label>
+            <label for="lint" class="form-label">Link archivo:</label>
             <div class="input-group">
                 <span class="input-group-text">http://drive.google.com/file</span>
-                <input type="text" class="form-control" id="url">
+                <input type="text" class="form-control" id="link">
             </div>
         </div>
     </div>
@@ -72,10 +72,10 @@
             <div class="flex-x">
 
                 <div class="split-input">
-                    <label for="technologyGeneral" class="form-label">Tecnologia:</label>
+                    <label for="technology" class="form-label">Tecnologia:</label>
                     <select class="form-control" 
-                    name="technologyGeneral" 
-                    id="technologyGeneral"
+                    name="technology" 
+                    id="technology"
                     [(ngModel)]="selectedTechnology">
                         <option disabled selected>Eliga una opcion</option>
                         <option value="resina">Resina</option>
@@ -84,8 +84,8 @@
                 </div>
 
                 <div class="split-input">
-                    <label for="materialGeneral" class="form-label">Material:</label>
-                    <select class="form-control" name="materialGeneral" id="materialGeneral" [disabled]="!selectedTechnology">
+                    <label for="material" class="form-label">Material:</label>
+                    <select class="form-control" name="material" id="material" [disabled]="!selectedTechnology">
                         <option disabled selected>Eliga una tecnologia</option>
                         <ng-container *ngIf="selectedTechnology">
                             <option *ngFor="let material of materialOptions[selectedTechnology]" [value]="material">{{material}}</option>
@@ -105,8 +105,8 @@
              <div class="flex-x">
 
                 <div class="split-input">
-                    <label class="form-label" for="resolutionGeneral">Resolución:</label>
-                    <select class="form-control" name="resolutionGeneral" id="resolutionGeneral">
+                    <label class="form-label" for="resolution">Resolución:</label>
+                    <select class="form-control" name="resolution" id="resolution">
                         <option value="" selected disabled>Elgia una opcion</option>
                         <option value="alta">Alta</option>
                         <option value="media">Media</option>
@@ -115,8 +115,8 @@
                 </div>
 
                 <div class="split-input">
-                    <label class="form-label" for="quantityGeneral">Cantidad:</label>
-                    <input class="form-control" type="number" name="quantityGeneral" id="quantityGeneral" min="0">
+                    <label class="form-label" for="quantity">Cantidad:</label>
+                    <input class="form-control" type="number" name="quantity" id="quantity" min="0">
                 </div>
             </div>
 
