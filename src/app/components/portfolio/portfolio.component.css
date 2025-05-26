@@ -41,8 +41,9 @@ hr {
 img{
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
-    max-width: 300px;
-    max-height: auto;
+    max-width: 280px;
+    max-height: 186px;
+    min-height: 186px;
 }
 
 p {
