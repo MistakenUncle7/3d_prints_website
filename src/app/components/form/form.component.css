@@ -1,11 +1,47 @@
-.form-container {
+.flex-container {
+    display: flex;
+    flex-flow: column;
+    margin: var(--margin-lg);
+    margin-top: 7rem;
+    padding: var(--padding-md);
+    max-width: 65%;
+}
+
+.flex-x {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    gap: var(--gap-md);
+    margin-bottom: var(--margin-md);
+}
+
+.split-input {
+    width: 50%;
+}
+
+.full-input {
+    width: 100%;
+}
+
+hr {
+    margin: 0;
+    margin-bottom: var(--margin-md);
+    border-width: 5px;
+    border-radius: var(--border-radius);
+    border-color: var(--secondary-color);
+}
+
+.margin-buttom {
+    margin-bottom: var(--margin-md);
+}
+
+
+/* .form-container {
     display: flex;
     flex-direction: column;
-    background-color: var(--secondary-color);
-    border-radius: var(--border-radius);
     padding: var(--padding-md);
-    margin: var(--margin-md);
-    margin-top: 6rem;
+    margin: var(--margin-lg);
+    margin-top: 7rem;
 }
 
 h2 {
@@ -46,4 +82,4 @@ input {
 
 .btn-primary:hover {
     background-color: var(--bg-hover-color)
-}
+} */

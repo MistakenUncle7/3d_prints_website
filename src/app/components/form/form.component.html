@@ -1,77 +1,212 @@
-<form class="form-container">
+<form class="flex-container">
 
     <h2>Formulario Para Cotización</h2>
-
-    <div class="form-multiple-elements">
-        <div class="form-element-vertical">
-            <label for="firstName">Nombre</label>
-            <input type="text" name="firstName" id="firstName">
-        </div>
-        
-        <div class="form-element-vertical">
-            <label for="lastName">Apellidos</label>
-            <input type="text" name="lastName" id="lastName">
-        </div>
-    </div>
-
-    <div class="form-element-vertical">
-        <label for="email">Correo Electronico</label>
-        <input type="email" name="email" id="email">
-    </div>
-
-    <div class="form-element-vertical">
-        <label for="file">Link del archivo</label>
-        <input type="url" name="file" id="file">
-    </div>
-
-    <div class="form-multiple-elements">
-        
-        <div class="form-element-vertical">
-            <label for="quality">Calidad de la impresion</label>
-            <select name="quality" id="quality">
-                <option value="" selected disabled>Seleccionar</option>
-                <option value="High">Alta</option>
-                <option value="Medium">Media</option>
-            </select>
-        </div>
-        
-        <div class="form-element-vertical">
-            <label for="delivery">Tiempo de entrega</label>
-            <select name="delivery" id="delivery">
-                <option value="" selected disabled>Seleccionar</option>
-                <option value="Urgent">Urgente</option>
-                <option value="Normal">Normal</option>
-            </select>
-        </div>
-        
-    </div>
-
-    <div class="form-multiple-elements">
-
-        <div class="form-element-horizontal">
-            <input type="checkbox" name="cad" id="cad">
-            <label for="cad">¿Requiere diseño CAD?</label>
-        </div>
-        
-        <div class="form-element-horizontal">
-            <input type="checkbox" name="dentist" id="dentist">
-            <label for="dentist">¿Es usted un odontólogo?</label>
-        </div>
+    <hr>
     
-        <div class="form-element-horizontal">
-            <input type="checkbox" name="email" id="email">
-            <label for="email">¿Requiere la conversión a un modelo para impresión?</label>
+    <div class="flex-x">
+
+        <div class="split-input">
+            <label for="name" class="form-label">Nombre Completo:</label>
+            <input type="email" class="form-control" id="name" placeholder="Ej: Luis Hernandez Perez">
+        </div>
+
+        <div class="split-input">
+            <label for="phone" class="form-label">Whatsapp:</label>
+            <input type="tel" class="form-control" id="phone">
         </div>
 
     </div>
 
-    <div class="form-element-vertical">
-        <label for="description">Descripción sobre la impresión</label>
-        <textarea name="description" id="description" placeholder="Añadir descripción"></textarea>
+    <div class="flex-x">
+        <div class="full-input">
+            <label for="mail" class="form-label">Correo Electronico:</label>
+            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com">
+        </div>
     </div>
 
-    <div class="form-element-horizontal">
-        <button type="button" class="btn btn-primary">Cotizar</button>
+    <div class="flex-x">
+        <div class="full-input">
+            <label for="url" class="form-label">Link archivo:</label>
+            <div class="input-group">
+                <span class="input-group-text">http://drive.google.com/file</span>
+                <input type="text" class="form-control" id="url">
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-x">
+
+        <div class="split-input">
+            <div class="form-check form-switch">
+                <input class="form-check-input" 
+                    type="checkbox" 
+                    id="generalClient" switch
+                    [checked]="selectedProfile === 'general'"
+                    (change) = "onProfileChange('general', $event)">
+                <label class="form-check-label" for="generalClient">
+                  ¿Eres un cliente General?
+                </label>
+                <div class="form-text">Impresion de prototipos, piezas funcionales, maquetas, etc</div>
+            </div>
+        </div>
+
+        <div class="split-input">
+            <div class="form-check form-switch">
+                <input class="form-check-input" 
+                    type="checkbox" 
+                    id="dentistClient" switch
+                    [checked]="selectedProfile === 'dentist'"
+                    (change)="onProfileChange('dentist', $event)">
+                <label class="form-check-label" for="dentistClient">
+                  ¿Eres un odontologo?
+                </label>
+                <div class="form-text" id="basic-addon4">Eres doctor, técnico o estudiante</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="profile-options">
+
+        <ng-container *ngIf="selectedProfile === 'general'">
+            <div class="flex-x">
+
+                <div class="split-input">
+                    <label for="technologyGeneral" class="form-label">Tecnologia:</label>
+                    <select class="form-control" 
+                    name="technologyGeneral" 
+                    id="technologyGeneral"
+                    [(ngModel)]="selectedTechnology">
+                        <option disabled selected>Eliga una opcion</option>
+                        <option value="resina">Resina</option>
+                        <option value="filamento">Filamento</option>
+                    </select>
+                </div>
+
+                <div class="split-input">
+                    <label for="materialGeneral" class="form-label">Material:</label>
+                    <select class="form-control" name="materialGeneral" id="materialGeneral" [disabled]="!selectedTechnology">
+                        <option disabled selected>Eliga una tecnologia</option>
+                        <ng-container *ngIf="selectedTechnology">
+                            <option *ngFor="let material of materialOptions[selectedTechnology]" [value]="material">{{material}}</option>
+                        </ng-container>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="flex-x">
+                <div class="full-input">
+                    <label for="colorGeneral" class="form-label">Color:</label>
+                    <input type="text" class="form-control" id="colorGeneral">
+                </div>
+            </div>
+
+             <div class="flex-x">
+
+                <div class="split-input">
+                    <label class="form-label" for="resolutionGeneral">Resolución:</label>
+                    <select class="form-control" name="resolutionGeneral" id="resolutionGeneral">
+                        <option value="" selected disabled>Elgia una opcion</option>
+                        <option value="alta">Alta</option>
+                        <option value="media">Media</option>
+                        <option value="baja">Baja</option>
+                    </select>
+                </div>
+
+                <div class="split-input">
+                    <label class="form-label" for="quantityGeneral">Cantidad:</label>
+                    <input class="form-control" type="number" name="quantityGeneral" id="quantityGeneral" min="0">
+                </div>
+            </div>
+
+            <div class="flex-x">
+
+                <div class="split-input">
+                    <label class="form-label" for="sizeGeneral">Tamaño aproximado:</label>
+                    <div class="input-group">
+                        <input class="form-control" type="number" name="sizeGeneral" id="sizeGeneral" min="0">
+                        <span class="input-group-text">mm</span>
+                    </div>
+                </div>
+
+                <div class="split-input">
+                    <label class="form-label" for="requiredDateGeneral">Tiempo de entrega requierido:</label>
+                    <select class="form-control" name="requiredDateGeneral" id="requiredDateGeneral">
+                        <option value="" selected disabled>Elija una opcion</option>
+                        <option value="normal">Normal</option>
+                        <option value="urgente">Urgente</option>
+                    </select>
+                </div>
+
+            </div>
+        </ng-container>
+
+
+        <ng-container *ngIf="selectedProfile === 'dentist'">
+            <div class="flex-x">
+
+                <div class="split-input">
+                    <label for="modelType" class="form-label">Tipo de modelo:</label>
+                    <select class="form-control" name="modelType" id="modelType">
+                        <option disabled selected>Eliga una opcion</option>
+                        <option value="zócalo">Zócalo</option>
+                        <option value="articulado">Articulado</option>
+                        <option value="mockup">Mockup</option>
+                        <option value="alineadores">Alineadores</option>
+                        <option value="simple escaneado">Simple escaneado</option>
+                    </select>
+                </div>
+
+                <div class="split-input">
+                    <label for="colorDentist" class="form-label">Color de resina:</label>
+                    <select class="form-control" name="colorDentist" id="colorDentist">
+                        <option disabled selected>Eliga una opcion</option>
+                        <option value="beige">Beige</option>
+                        <option value="gris claro">Gris claro</option>
+                        <option value="rosa gingival">Rosa gingival</option>
+                        <option value="transparente">Transparente</option>
+                        <option value="simple escaneado">Simple escaneado</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="flex-x">
+
+                <div class="split-input form-check">
+                    <input class="form-check-input" type="checkbox" value="includesCad" id="includesCad">
+                    <label class="form-check-label" for="includesCad">
+                        ¿Incluye diseño CAD?
+                    </label>
+                </div>
+
+                <div class="split-input form-check">
+                    <input class="form-check-input" type="checkbox" value="needsCad" id="needsCad">
+                    <label class="form-check-label" for="needsCad">
+                        No tengo archivo, necesito diseño CAD
+                    </label>
+                </div>
+                
+            </div>
+            
+            <div class="flex-x">
+                <div class="full-input">
+                    <label for="requiredDateDentist" class="form-label">Fecha de entrega requerida:</label>
+                    <input type="date" class="form-control" name="requiredDateDentist" id="requiredDateDentist">
+                </div>
+            </div>
+        </ng-container>
+
+        <div class="form-floating">
+            <textarea class="form-control" 
+            placeholder="Deje aqui sus comentarios" 
+            name="comments" 
+            id="comments"
+            style="height: 100px;"></textarea>
+            <label for="comments">Comentarios</label>
+        </div>
+
     </div>
 
 </form>
