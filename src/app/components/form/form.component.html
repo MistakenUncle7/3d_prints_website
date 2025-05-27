@@ -7,12 +7,12 @@
 
         <div class="split-input">
             <label for="name" class="form-label">Nombre Completo:</label>
-            <input type="email" class="form-control" id="name" placeholder="Ej: Luis Hernandez Perez">
+            <input type="email" class="form-control" id="name" placeholder="Ej: Luis Hernandez Perez" [(ngModel)]="name">
         </div>
 
         <div class="split-input">
             <label for="phone" class="form-label">Whatsapp:</label>
-            <input type="tel" class="form-control" id="phone">
+            <input type="tel" class="form-control" id="phone" [(ngModel)]="phone">
         </div>
 
     </div>
@@ -20,7 +20,7 @@
     <div class="flex-x">
         <div class="full-input">
             <label for="mail" class="form-label">Correo Electronico:</label>
-            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com">
+            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" [(ngModel)]="email">
         </div>
     </div>
 
@@ -29,7 +29,7 @@
             <label for="lint" class="form-label">Link archivo:</label>
             <div class="input-group">
                 <span class="input-group-text">http://drive.google.com/file</span>
-                <input type="text" class="form-control" id="link">
+                <input type="text" class="form-control" id="link" [(ngModel)]="link">
             </div>
         </div>
     </div>
@@ -85,7 +85,7 @@
 
                 <div class="split-input">
                     <label for="material" class="form-label">Material:</label>
-                    <select class="form-control" name="material" id="material" [disabled]="!selectedTechnology">
+                    <select class="form-control" name="material" id="material" [(ngModel)]="material" [disabled]="!selectedTechnology">
                         <option disabled selected>Eliga una tecnologia</option>
                         <ng-container *ngIf="selectedTechnology">
                             <option *ngFor="let material of materialOptions[selectedTechnology]" [value]="material">{{material}}</option>
@@ -98,7 +98,7 @@
             <div class="flex-x">
                 <div class="full-input">
                     <label for="colorGeneral" class="form-label">Color:</label>
-                    <input type="text" class="form-control" id="colorGeneral">
+                    <input type="text" class="form-control" id="colorGeneral" [(ngModel)]="color">
                 </div>
             </div>
 
@@ -106,7 +106,7 @@
 
                 <div class="split-input">
                     <label class="form-label" for="resolution">Resolución:</label>
-                    <select class="form-control" name="resolution" id="resolution">
+                    <select class="form-control" name="resolution" id="resolution" [(ngModel)]="resolution">
                         <option value="" selected disabled>Elgia una opcion</option>
                         <option value="alta">Alta</option>
                         <option value="media">Media</option>
@@ -116,23 +116,23 @@
 
                 <div class="split-input">
                     <label class="form-label" for="quantity">Cantidad:</label>
-                    <input class="form-control" type="number" name="quantity" id="quantity" min="0">
+                    <input class="form-control" type="number" name="quantity" id="quantity" min="0" [(ngModel)]="quantity">
                 </div>
             </div>
 
             <div class="flex-x">
 
                 <div class="split-input">
-                    <label class="form-label" for="sizeGeneral">Tamaño aproximado:</label>
+                    <label class="form-label" for="size">Tamaño aproximado:</label>
                     <div class="input-group">
-                        <input class="form-control" type="number" name="sizeGeneral" id="sizeGeneral" min="0">
+                        <input class="form-control" type="number" name="size" id="size" min="0" [(ngModel)]="size">
                         <span class="input-group-text">mm</span>
                     </div>
                 </div>
 
                 <div class="split-input">
-                    <label class="form-label" for="requiredDateGeneral">Tiempo de entrega requierido:</label>
-                    <select class="form-control" name="requiredDateGeneral" id="requiredDateGeneral">
+                    <label class="form-label" for="deliveryTime">Tiempo de entrega requierido:</label>
+                    <select class="form-control" name="deliveryTime" id="deliveryTime"[(ngModel)]="deliveryDate">
                         <option value="" selected disabled>Elija una opcion</option>
                         <option value="normal">Normal</option>
                         <option value="urgente">Urgente</option>
@@ -148,7 +148,7 @@
 
                 <div class="split-input">
                     <label for="modelType" class="form-label">Tipo de modelo:</label>
-                    <select class="form-control" name="modelType" id="modelType">
+                    <select class="form-control" name="modelType" id="modelType" [(ngModel)]="modelType">
                         <option disabled selected>Eliga una opcion</option>
                         <option value="zócalo">Zócalo</option>
                         <option value="articulado">Articulado</option>
@@ -160,7 +160,7 @@
 
                 <div class="split-input">
                     <label for="colorDentist" class="form-label">Color de resina:</label>
-                    <select class="form-control" name="colorDentist" id="colorDentist">
+                    <select class="form-control" name="colorDentist" id="colorDentist" [(ngModel)]="color">
                         <option disabled selected>Eliga una opcion</option>
                         <option value="beige">Beige</option>
                         <option value="gris claro">Gris claro</option>
@@ -174,15 +174,15 @@
 
             <div class="flex-x">
 
-                <div class="split-input form-check">
-                    <input class="form-check-input" type="checkbox" value="includesCad" id="includesCad">
+                <!-- <div class="split-input form-check">
+                    <input class="form-check-input" type="checkbox" value="includesCad" id="includesCad"[(ngModel)]="includesCad">
                     <label class="form-check-label" for="includesCad">
                         ¿Incluye diseño CAD?
                     </label>
-                </div>
+                </div> -->
 
-                <div class="split-input form-check">
-                    <input class="form-check-input" type="checkbox" value="needsCad" id="needsCad">
+                <div class="full-input form-check">
+                    <input class="form-check-input" type="checkbox" value="needsCad" id="needsCad" [(ngModel)]="needsCad">
                     <label class="form-check-label" for="needsCad">
                         No tengo archivo, necesito diseño CAD
                     </label>
@@ -192,8 +192,8 @@
             
             <div class="flex-x">
                 <div class="full-input">
-                    <label for="requiredDateDentist" class="form-label">Fecha de entrega requerida:</label>
-                    <input type="date" class="form-control" name="requiredDateDentist" id="requiredDateDentist">
+                    <label for="deliveryDate" class="form-label">Fecha de entrega requerida:</label>
+                    <input type="date" class="form-control" name="deliveryDate" id="deliveryDate" [(ngModel)]="deliveryDate">
                 </div>
             </div>
         </ng-container>
@@ -203,10 +203,13 @@
             placeholder="Deje aqui sus comentarios" 
             name="comments" 
             id="comments"
-            style="height: 100px;"></textarea>
+            style="height: 100px;"
+            [(ngModel)]="comments"></textarea>
             <label for="comments">Comentarios</label>
         </div>
 
     </div>
+
+    <button type="button" class="btn btn-primary" (click)="submitForm()">Cotizar</button>
 
 </form>

@@ -1,3 +1,53 @@
 <div class="container">
 
+    <div class="row">
+        <div class="col">
+            <h2>Clientes Registrados</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-sm table-striped table-hover">
+            <thead>
+                <tr *ngFor="let user of users">
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Enlace CAD</th>
+                    <th>Tipo de cliente</th>
+                    <th>Tecnología</th>
+                    <th>Material</th>
+                    <th>Color</th>
+                    <th>Resolución</th>
+                    <th>Cantidad</th>
+                    <th>Tamaño</th>
+                    <th>Modelo</th>
+                    <th>Necesita diseño CAD</th>
+                    <th>Fecha de entrega</th>
+                    <th>Comentarios</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let user of users">
+                    <td>{{user.name}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.link}}</td>
+                    <td>{{user.selectedProfile}}</td>
+                    <td>{{user.technology}}</td>
+                    <td>{{user.material}}</td>
+                    <td>{{user.color}}</td>
+                    <td>{{user.resolution}}</td>
+                    <td>{{user.quantity}}</td>
+                    <td>{{user.size}}</td>
+                    <td>{{user.modelType}}</td>
+                    <td>{{user.needsCad}}</td>
+                    <td>{{user.deliveryDate}}</td>
+                    <td>{{user.comments}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </div>

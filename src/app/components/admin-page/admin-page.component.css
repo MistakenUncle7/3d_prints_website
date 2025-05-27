@@ -1,0 +1,11 @@
+.container {
+    margin-top: 7rem;
+}
+
+hr {
+    margin: 0;
+    margin-bottom: var(--margin-md);
+    border-width: 5px;
+    border-radius: var(--border-radius);
+    border-color: var(--secondary-color);
+}
