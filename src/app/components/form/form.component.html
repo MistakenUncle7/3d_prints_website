@@ -7,12 +7,12 @@
 
         <div class="split-input">
             <label for="name" class="form-label">Nombre Completo:</label>
-            <input type="email" class="form-control" id="name" placeholder="Ej: Luis Hernandez Perez" [(ngModel)]="name">
+            <input type="email" class="form-control" id="name" placeholder="Ej: Luis Hernandez Perez" name="name" [(ngModel)]="name">
         </div>
 
         <div class="split-input">
             <label for="phone" class="form-label">Whatsapp:</label>
-            <input type="tel" class="form-control" id="phone" [(ngModel)]="phone">
+            <input type="tel" class="form-control" id="phone" name="phone" [(ngModel)]="phone">
         </div>
 
     </div>
@@ -20,7 +20,7 @@
     <div class="flex-x">
         <div class="full-input">
             <label for="mail" class="form-label">Correo Electronico:</label>
-            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" [(ngModel)]="email">
+            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" name="email" [(ngModel)]="email">
         </div>
     </div>
 
@@ -29,7 +29,7 @@
             <label for="lint" class="form-label">Link archivo:</label>
             <div class="input-group">
                 <span class="input-group-text">http://drive.google.com/file</span>
-                <input type="text" class="form-control" id="link" [(ngModel)]="link">
+                <input type="text" class="form-control" id="link" name="link" [(ngModel)]="link">
             </div>
         </div>
     </div>
@@ -41,6 +41,7 @@
                 <input class="form-check-input" 
                     type="checkbox" 
                     id="generalClient" switch
+                    name="generalClient"
                     [checked]="selectedProfile === 'general'"
                     (change) = "onProfileChange('general', $event)">
                 <label class="form-check-label" for="generalClient">
@@ -72,10 +73,10 @@
             <div class="flex-x">
 
                 <div class="split-input">
-                    <label for="technology" class="form-label">Tecnologia:</label>
+                    <label for="selectedTechnology" class="form-label">Tecnologia:</label>
                     <select class="form-control" 
-                    name="technology" 
-                    id="technology"
+                    id="selectedTechnology"
+                    name="selectedTechnology" 
                     [(ngModel)]="selectedTechnology">
                         <option disabled selected>Eliga una opcion</option>
                         <option value="resina">Resina</option>
@@ -98,7 +99,7 @@
             <div class="flex-x">
                 <div class="full-input">
                     <label for="colorGeneral" class="form-label">Color:</label>
-                    <input type="text" class="form-control" id="colorGeneral" [(ngModel)]="color">
+                    <input type="text" class="form-control" id="colorGeneral" name="color" [(ngModel)]="color">
                 </div>
             </div>
 
@@ -132,7 +133,7 @@
 
                 <div class="split-input">
                     <label class="form-label" for="deliveryTime">Tiempo de entrega requierido:</label>
-                    <select class="form-control" name="deliveryTime" id="deliveryTime"[(ngModel)]="deliveryDate">
+                    <select class="form-control" name="deliveryTime" id="deliveryTime" [(ngModel)]="deliveryDate">
                         <option value="" selected disabled>Elija una opcion</option>
                         <option value="normal">Normal</option>
                         <option value="urgente">Urgente</option>
@@ -160,7 +161,7 @@
 
                 <div class="split-input">
                     <label for="colorDentist" class="form-label">Color de resina:</label>
-                    <select class="form-control" name="colorDentist" id="colorDentist" [(ngModel)]="color">
+                    <select class="form-control" name="color" id="colorDentist" [(ngModel)]="color">
                         <option disabled selected>Eliga una opcion</option>
                         <option value="beige">Beige</option>
                         <option value="gris claro">Gris claro</option>
@@ -182,7 +183,7 @@
                 </div> -->
 
                 <div class="full-input form-check">
-                    <input class="form-check-input" type="checkbox" value="needsCad" id="needsCad" [(ngModel)]="needsCad">
+                    <input class="form-check-input" type="checkbox" value="needsCad" id="needsCad" name="needsCad" [(ngModel)]="needsCad">
                     <label class="form-check-label" for="needsCad">
                         No tengo archivo, necesito diseño CAD
                     </label>

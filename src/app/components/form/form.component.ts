@@ -62,7 +62,9 @@ export class FormComponent {
 
     this.api.addUser(data).subscribe(response => {
       console.log(response)
-    })
+      alert("Usario registrado")
+    });
 
+    
   }
 }
