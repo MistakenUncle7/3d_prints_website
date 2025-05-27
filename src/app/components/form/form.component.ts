@@ -15,7 +15,7 @@ export class FormComponent {
   phone: string = '';
   email: string = '';
   link: string = '';
-  selectedProfile: 'general' | 'dentist' | null = null;
+  selectedProfile: 'general' | 'dentista' | null = null;
   selectedTechnology: 'resina' | 'filamento' | null = null;
   material: string = '';
   color: string = '';
@@ -32,11 +32,6 @@ export class FormComponent {
   materialOptions: { [key: string]: string[] } = {
     resina: ['PLA', 'ABS', 'PETG (FDM)'],
     filamento: ['Estándar', 'Transparente', 'Felxible (Resina)']
-  }
-
-  onProfileChange(profile: 'general' | 'dentist', event: Event) {
-    const checked = (event.target as HTMLInputElement).checked;
-    this.selectedProfile = checked ? profile : null;
   }
 
   constructor(private api: ApiService) {}

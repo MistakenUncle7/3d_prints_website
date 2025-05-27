@@ -19,12 +19,4 @@ export class AdminPageComponent implements OnInit {
     })
 
   }
-
-  get hasGeneral(): boolean {
-    return this.users.some(u => u.selectedProfile === 'general');
-  }
-
-  get hasDentist(): boolean {
-    return this.users.some(u => u.selectedProfile === 'dentist')
-  }
 }
